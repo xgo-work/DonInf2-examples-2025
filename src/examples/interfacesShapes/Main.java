@@ -18,7 +18,7 @@ public class Main {
         for (int number : numbers) {
             System.out.print(number + " ");
         }
-        System.out.println("*******************");
+        System.out.println("******************* end of example");
 
         List<ISurface> surfaces = new ArrayList<>();
 
