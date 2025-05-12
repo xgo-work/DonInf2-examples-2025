@@ -21,6 +21,23 @@ public class Main {
         System.out.println("******************* end of example");
 
         List<ISurface> surfaces = new ArrayList<>();
+        surfaces.add(new Circle(5));
+        surfaces.add(new Rectangle(12, 3));
+        surfaces.add(new Rectangle(2, 3));
+        surfaces.add(new Circle(2));
+
+        for (ISurface iSurface : surfaces) {
+            System.out.println(iSurface.area());
+        }
+
+        System.out.println("*******************");
+
+        // sort
+        java.util.Collections.sort(surfaces);
+
+        for (ISurface iSurface : surfaces) {
+            System.out.println(iSurface.area());
+        }
 
         // Step 1 Adapt the classes to fill this list with some rectangles and circles
         // you will have to adapt the classes
