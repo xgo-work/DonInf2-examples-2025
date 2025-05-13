@@ -22,5 +22,6 @@ public class Rectangle extends Shape{
 
     @Override
     public void display() {
+        System.out.println(String.format("Rectangle: width = %f, height = %f area = %f", this.width, this.height, this.area()));
     }
 }

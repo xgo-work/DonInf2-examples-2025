@@ -1,16 +1,20 @@
 package examples.interfacesShapes;
 
 public abstract class Shape implements ISurface {
-    // Abstract method to calculate the area of the shape
+
+    // compute the area of the shape
     public abstract double area();
 
-    // Abstract method to calculate the perimeter of the shape
+    // compute the perimeter of the shape
     public abstract double perimeter();
 
     // display the shape's information
     public abstract void display();
 
     public int compareTo(ISurface other) {
+        // if this shape has a larger area than the other shape, return 1
+        // else if this shape has a smaller area than the other shape, return -1
+        // else both shapes have the same area, return 0
         if(this.area() > other.area()){
             return 1;
         }else if(this.area() < other.area()){
@@ -18,7 +22,6 @@ public abstract class Shape implements ISurface {
         }else {
             return 0;
         }
-
     }
 
 }
