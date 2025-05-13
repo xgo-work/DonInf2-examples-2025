@@ -1,6 +1,6 @@
 package examples.interfacesShapes;
 
-public interface ISurface extends Comparable<ISurface> {
+public interface ISurface {
     double area();
     double perimeter();
     void display();
