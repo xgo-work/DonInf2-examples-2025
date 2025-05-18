@@ -2,27 +2,24 @@ package examples.templatePattern;
 
 public class Quiche extends Tarte{
 
-    @Override
-    public void preparer() {
+    private void ajouterLaitetOeufs() {}
 
-        this.prechaufferFour(190);
-        this.preparerPate();
-        this.preparerMoule();
-        this.raperFromage();
-        this.ajouterLaitetOeufs();
-        this.enfourner(40);
-        while (!verifierCuisson()) {
-            this.enfourner(5);
-        }
+    private void raperFromage() {}
+
+    @Override
+    protected void preparerGarniture() {
+        raperFromage();
+        ajouterLaitetOeufs();
+    }
+
+    @Override
+    protected void ajouterGarniture() {
+    }
+
+    @Override
+    protected void messageFin() {
         System.out.println("Quiche prête !");
     }
-
-    private void ajouterLaitetOeufs() {
-    }
-
-    private void raperFromage() {
-    }
-
 
 }
 

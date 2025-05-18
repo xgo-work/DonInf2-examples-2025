@@ -9,6 +9,23 @@ public abstract class Tarte implements IRecette {
     private Pate pate;
     private MouleATarte moule;
 
+    // Méthode template
+    @Override
+    public void preparer() {
+        this.prechaufferFour(200);
+        this.preparerPate();
+        this.preparerMoule();
+        // Appel des méthodes abstraites
+        this.preparerGarniture();
+        this.ajouterGarniture();
+
+        this.enfourner(45);
+        while (!verifierCuisson()) {
+            this.enfourner(5);
+        }
+        this.messageFin();
+    }
+
     protected void prechaufferFour(int temperature){
         Cuisine.getFour().prechaufferFour(temperature);
     }
@@ -33,4 +50,8 @@ public abstract class Tarte implements IRecette {
     protected void enfourner(int duration) {
         Cuisine.getFour().enfourner(moule);
     }
+
+    protected abstract void preparerGarniture();
+    protected abstract void ajouterGarniture();
+    protected abstract void messageFin();
 }
