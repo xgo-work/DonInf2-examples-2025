@@ -12,16 +12,16 @@ public class Quiche implements IRecette{
     @Override
     public void preparer() {
 
-        prechaufferFour(190);
-        preparerPate();
-        abaisserPate();
-        preparerMoule();
-        raperFromage();
-        ajouterLaitetOeufs();
-        enfourner(40);
+        this.prechaufferFour(190);
+        this.preparerPate();
+        this.preparerMoule();
+        this.raperFromage();
+        this.ajouterLaitetOeufs();
+        this.enfourner(40);
         while (!verifierCuisson()) {
-            enfourner(5);
+            this.enfourner(5);
         }
+        System.out.println("Quiche prête !");
     }
 
     private void ajouterLaitetOeufs() {
@@ -35,7 +35,7 @@ public class Quiche implements IRecette{
     }
 
     private boolean verifierCuisson() {
-        return true;
+        return this.pate.estCuite();
     }
 
     private void preparerPate() {
@@ -46,12 +46,8 @@ public class Quiche implements IRecette{
         this.pate = new Pate(recipient.getContenu());
     }
 
-    private void abaisserPate() {
-        this.pate.abaisser();
-    }
-
     private void preparerMoule() {
-        MouleATarte moule = Cuisine.getMouleATarte();
+        this.moule = Cuisine.getMouleATarte();
         moule.setPate(this.pate);
     }
 

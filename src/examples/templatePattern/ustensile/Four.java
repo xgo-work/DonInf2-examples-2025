@@ -2,10 +2,12 @@ package examples.templatePattern.ustensile;
 
 public class Four {
 
-    public void prechaufferFour(int i) {
+    public void prechaufferFour(int temperature) {
+        System.out.println("Four préchauffé à " + temperature + "°C");
     }
 
     public void enfourner(MouleATarte moule) {
+        System.out.println("Moule à tarte enfourné");
     }
 
 }
