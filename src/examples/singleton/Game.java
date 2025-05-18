@@ -1,13 +1,17 @@
 package examples.singleton;
 
-// EXERCICE : faire de cette classe un singleton avec une methode getInstance()
+// Singleton exercice correction
 public class Game {
+
+    // Singleton instance
     private static Game instance;
 
+    // private constructor to prevent instantiation
     private Game() {
 
     }
 
+    // Static method to get the singleton instance
     public Game getInstance(){
         if(Game.instance == null){
             Game.instance = new Game();
