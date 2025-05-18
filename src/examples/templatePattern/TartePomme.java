@@ -24,16 +24,16 @@ public class TartePomme implements IRecette{
         }
     }
 
-    private void abaisserPate() {
-        this.pate.abaisser();
-    }
-
     private void ajouterPommes() {}
 
     private void couperPommes() {}
 
     private void prechaufferFour(int temperature){
         Cuisine.getFour().prechaufferFour(temperature);
+    }
+
+    private boolean verifierCuisson() {
+        return true;
     }
 
     private void preparerPate() {
@@ -44,6 +44,10 @@ public class TartePomme implements IRecette{
         this.pate = new Pate(recipient.getContenu());
     }
 
+    private void abaisserPate() {
+        this.pate.abaisser();
+    }
+
     private void preparerMoule() {
         MouleATarte moule = Cuisine.getMouleATarte();
         moule.setPate(this.pate);
@@ -51,10 +55,6 @@ public class TartePomme implements IRecette{
 
     private void enfourner(int duration) {
         Cuisine.getFour().enfourner(moule);
-    }
-
-    private boolean verifierCuisson() {
-        return true;
     }
 
 }
