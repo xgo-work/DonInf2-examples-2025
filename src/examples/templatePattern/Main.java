@@ -10,8 +10,8 @@ public class Main {
         quiche.preparer();
         /**
          * *** Exercice Implementer le pattern Method Template ***
-         * 1. Créer une classe abstraite Tarte
-         * 2. Transférer toutes les méthodes communes à TartePomme & Quiche dans la classe Tarte
+         * DONE 1. Créer une classe abstraite Tarte
+         * DONE 2. Transférer toutes les méthodes communes à TartePomme & Quiche dans la classe Tarte
          * 3. Créer des méthodes abstraites dans Tarte pour les étapes spécifiques à chaque recette
          * (par exempte: preparerGarniture(), ajouterGarniture())
          * 4. Implémenter les méthodes abstraites dans les classes TartePomme & Quiche

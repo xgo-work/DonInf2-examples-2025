@@ -1,13 +1,6 @@
 package examples.templatePattern;
 
-import examples.templatePattern.ustensile.Cuisine;
-import examples.templatePattern.ustensile.MouleATarte;
-import examples.templatePattern.ustensile.Recipient;
-
-public class Quiche implements IRecette{
-
-    private Pate pate;
-    private MouleATarte moule;
+public class Quiche extends Tarte{
 
     @Override
     public void preparer() {
@@ -30,30 +23,7 @@ public class Quiche implements IRecette{
     private void raperFromage() {
     }
 
-    private void prechaufferFour(int temperature){
-        Cuisine.getFour().prechaufferFour(temperature);
-    }
 
-    private boolean verifierCuisson() {
-        return this.pate.estCuite();
-    }
-
-    private void preparerPate() {
-        Recipient recipient = Cuisine.getRecipient();
-        recipient.ajouter("farine");
-        recipient.ajouter("oeuf");
-        recipient.ajouter("beurre");
-        this.pate = new Pate(recipient.getContenu());
-    }
-
-    private void preparerMoule() {
-        this.moule = Cuisine.getMouleATarte();
-        moule.setPate(this.pate);
-    }
-
-    private void enfourner(int duration) {
-        Cuisine.getFour().enfourner(moule);
-    }
 }
 
 
