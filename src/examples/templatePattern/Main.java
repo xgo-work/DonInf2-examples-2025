@@ -1,5 +1,6 @@
 package examples.templatePattern;
 
+// Corrigé partie I
 public class Main {
 
     public static void main(String[] args) {
@@ -23,11 +24,11 @@ public class Main {
          * 4. Modifier la classe Tarte
          *   - le constructeur prend une IPate en paramètre
          *   - la variable d'instance devient une IPate
-         *   - la methode preparer doit etre adaptée pour utiliser les methode de IPate
-         * 5. Adaptez les classes qui en hérite (il faut un constructeur qui prend un IPate)
-         * 6. Retirer la méthode preparerPate de la classe Tarte
-         * 7.
-         * 6. Adapter le main pour invoquer les constructeurs prenant une IPate en paramètre
+         * 5. Adapter les classes qui en héritent (il faut un constructeur qui prend une IPate)
+         * 6. Retirer la méthode preparerPate de la classe Tarte et adapter la methode preparer()
+         * 7. Adapter le main pour invoquer les constructeurs prenant une IPate en paramètre
+         * Vous devriez pouvoir déclarer une tarte aux pommes comme ceci
+         * new TartePomme(new PateFeuilletee());
          *
          * PARTIE II
          * On peut appliquer la même approche pour la garniture.
@@ -40,10 +41,10 @@ public class Main {
          *    - GarnitureTartePomme
          *    - GarnitureTarteNoisette
          *    - GarnitureQuiche
-         * 3. Injecter une IGarnitureTarte dans le constructeur de Tarte (et déclarer un champ de classe IGarniture)
+         * 3. Injecter une IGarnitureTarte dans le constructeur de Tarte (et déclarer une variable d'instance IGarniture)
          * 4. Transformez Tarte en classe concrète et modifiez la méthode preparer en appelant les méthodes sur IPate et IGarniture
          *   (faites toutes les transformations nécessaires)
-         * 5. Vous pouvez maintenant effacer entièrement les classe TartePomme, TarteNoisette
+         * 5. Vous pouvez maintenant effacer entièrement les classe TartePomme, TarteNoisette, ...
          * 6. Vous devriez maintenant pouvoir déclarer une tarte comme ceci
          *      new Tarte(new PateBrisee(...), new GarniturePomme());
          *
