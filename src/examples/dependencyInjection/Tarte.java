@@ -3,13 +3,17 @@ package examples.dependencyInjection;
 import examples.dependencyInjection.ustensile.Cuisine;
 import examples.dependencyInjection.ustensile.MouleATarte;
 
-public abstract class Tarte implements IRecette {
+public class Tarte implements IRecette {
 
     private IPate pate;
+    private IGarnitureTarte garniture;
     private MouleATarte moule;
+    private String nomRecette;
 
-    protected Tarte(IPate pate) {
+    public Tarte(IPate pate, IGarnitureTarte garniture, String nomRecette) {
         this.pate = pate;
+        this.garniture = garniture;
+        this.nomRecette = nomRecette;
     }
 
     // Méthode template
@@ -21,8 +25,9 @@ public abstract class Tarte implements IRecette {
         this.pate.abaisser();
 
         this.preparerMoule();
-        this.preparerGarniture();
-        this.ajouterGarniture();
+        // logique garniture encapsulée dans garniture
+        this.garniture.preparerGarniture();
+        this.garniture.ajouterGarniture();
 
         this.enfourner(45);
         while (!verifierCuisson()) {
@@ -31,24 +36,24 @@ public abstract class Tarte implements IRecette {
         this.messageFin();
     }
 
-    protected void prechaufferFour(int temperature){
+    private void prechaufferFour(int temperature){
         Cuisine.getFour().prechaufferFour(temperature);
     }
 
-    protected boolean verifierCuisson() {
+    private boolean verifierCuisson() {
         return this.pate.estCuite();
     }
 
-    protected void preparerMoule() {
+    private void preparerMoule() {
         this.moule = Cuisine.getMouleATarte();
         moule.setPate(this.pate);
     }
 
-    protected void enfourner(int duration) {
+    private void enfourner(int duration) {
         Cuisine.getFour().enfourner(moule);
     }
 
-    protected abstract void preparerGarniture();
-    protected abstract void ajouterGarniture();
-    protected abstract void messageFin();
+    private void messageFin() {
+        System.out.println(this.nomRecette + " prêt(e)");
+    }
 }

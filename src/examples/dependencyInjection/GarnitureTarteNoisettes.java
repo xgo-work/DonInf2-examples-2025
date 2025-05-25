@@ -1,10 +1,6 @@
 package examples.dependencyInjection;
 
-public class TarteNoisettes extends Tarte {
-
-    public TarteNoisettes(IPate pate) {
-        super(pate);
-    }
+public class GarnitureTarteNoisettes implements IGarnitureTarte {
 
     private void ajouterNoisettes() {
         System.out.println("Noisettes ajoutées");
@@ -15,19 +11,14 @@ public class TarteNoisettes extends Tarte {
     }
 
     @Override
-    protected void preparerGarniture() {
+    public void preparerGarniture() {
         ajouterNoisettes();
         ajouterChocolat();
     }
 
     @Override
-    protected void ajouterGarniture() {
+    public void ajouterGarniture() {
         System.out.println("Garniture ajoutée");
-    }
-
-    @Override
-    protected void messageFin() {
-        System.out.println("Tarte aux noisettes prête !");
     }
 
 }
