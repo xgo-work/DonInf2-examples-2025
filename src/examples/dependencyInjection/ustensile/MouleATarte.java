@@ -1,6 +1,6 @@
-package examples.templatePattern.ustensile;
+package examples.dependencyInjection.ustensile;
 
-import examples.templatePattern.PateBrisee;
+import examples.dependencyInjection.PateBrisee;
 
 public class MouleATarte {
 

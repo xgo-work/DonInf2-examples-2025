@@ -1,4 +1,4 @@
-package examples.templatePattern;
+package examples.dependencyInjection;
 
 public class Quiche extends Tarte{
 

@@ -1,7 +1,7 @@
-package examples.templatePattern;
+package examples.dependencyInjection;
 
-import examples.templatePattern.ustensile.Cuisine;
-import examples.templatePattern.ustensile.Recipient;
+import examples.dependencyInjection.ustensile.Cuisine;
+import examples.dependencyInjection.ustensile.Recipient;
 
 public class PateBrisee {
 

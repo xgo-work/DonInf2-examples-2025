@@ -1,4 +1,4 @@
-package examples.templatePattern.ustensile;
+package examples.dependencyInjection.ustensile;
 
 import java.util.ArrayList;
 import java.util.List;

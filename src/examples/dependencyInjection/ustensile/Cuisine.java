@@ -1,4 +1,4 @@
-package examples.templatePattern.ustensile;
+package examples.dependencyInjection.ustensile;
 
 
 public class Cuisine {

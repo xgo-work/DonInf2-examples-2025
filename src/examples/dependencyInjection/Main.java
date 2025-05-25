@@ -1,4 +1,4 @@
-package examples.templatePattern;
+package examples.dependencyInjection;
 
 // Corrigé partie I
 public class Main {
@@ -14,12 +14,13 @@ public class Main {
          * *** Exercice Implementer une injection de dépendance par constructeur ***
          * *** CONSTRUCTOR DEPENDENCY INJECTION ***
          *
+         *
          * PARTIE I
          * 1. Créez une interface IPate avec les méthodes
          *      void preparer();
          *      void abaisser();
          *      boolean estCuite();
-         * 2. modifier la classe PateBrisee pour qu'elle implemente IPate
+         * 2. modifier la classe PateBrisee pour qu'elle implémente IPate
          * 3. Faites de même avec PateFeuilletee
          * 4. Modifier la classe Tarte
          *   - le constructeur prend une IPate en paramètre

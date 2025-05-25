@@ -1,7 +1,7 @@
-package examples.templatePattern;
+package examples.dependencyInjection;
 
-import examples.templatePattern.ustensile.Cuisine;
-import examples.templatePattern.ustensile.MouleATarte;
+import examples.dependencyInjection.ustensile.Cuisine;
+import examples.dependencyInjection.ustensile.MouleATarte;
 
 public abstract class Tarte implements IRecette {
 
