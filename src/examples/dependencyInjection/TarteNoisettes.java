@@ -2,6 +2,10 @@ package examples.dependencyInjection;
 
 public class TarteNoisettes extends Tarte {
 
+    public TarteNoisettes(IPate pate) {
+        super(pate);
+    }
+
     private void ajouterNoisettes() {
         System.out.println("Noisettes ajoutées");
     }

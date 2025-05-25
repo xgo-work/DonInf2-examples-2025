@@ -4,30 +4,29 @@ package examples.dependencyInjection;
 public class Main {
 
     public static void main(String[] args) {
-        TartePomme tartePomme = new TartePomme();
+        TartePomme tartePomme = new TartePomme(new PateFeuilletee());
         tartePomme.preparer();
 
         System.out.println("====================================");
-        Quiche quiche = new Quiche();
+        Quiche quiche = new Quiche(new PateBrisee());
         quiche.preparer();
         /**
          * *** Exercice Implementer une injection de dépendance par constructeur ***
          * *** CONSTRUCTOR DEPENDENCY INJECTION ***
          *
-         *
-         * PARTIE I
-         * 1. Créez une interface IPate avec les méthodes
+         * PARTIE I DONE
+         * DONE 1. Créez une interface IPate avec les méthodes
          *      void preparer();
          *      void abaisser();
          *      boolean estCuite();
-         * 2. modifier la classe PateBrisee pour qu'elle implémente IPate
-         * 3. Faites de même avec PateFeuilletee
-         * 4. Modifier la classe Tarte
+         * DONE 2. modifier la classe PateBrisee pour qu'elle implémente IPate
+         * DONE 3. Faites de même avec PateFeuilletee
+         * DONE  4. Modifier la classe Tarte
          *   - le constructeur prend une IPate en paramètre
          *   - la variable d'instance devient une IPate
-         * 5. Adapter les classes qui en héritent (il faut un constructeur qui prend une IPate)
-         * 6. Retirer la méthode preparerPate de la classe Tarte et adapter la methode preparer()
-         * 7. Adapter le main pour invoquer les constructeurs prenant une IPate en paramètre
+         * DONE 5. Adapter les classes qui en héritent (il faut un constructeur qui prend une IPate)
+         * DONE 6. Retirer la méthode preparerPate de la classe Tarte et adapter la methode preparer()
+         * DONE 7. Adapter le main pour invoquer les constructeurs prenant une IPate en paramètre
          * Vous devriez pouvoir déclarer une tarte aux pommes comme ceci
          * new TartePomme(new PateFeuilletee());
          *
@@ -53,7 +52,7 @@ public class Main {
          */
         System.out.println("====================================");
 
-        TarteNoisettes tarteNoisettes = new TarteNoisettes();
+        TarteNoisettes tarteNoisettes = new TarteNoisettes(new PateFeuilletee());
         tarteNoisettes.preparer();
     }
 }

@@ -2,6 +2,10 @@ package examples.dependencyInjection;
 
 public class TartePomme extends Tarte{
 
+    public TartePomme(IPate pate) {
+        super(pate);
+    }
+
     private void ajouterPommes() {}
     private void couperPommes() {}
 

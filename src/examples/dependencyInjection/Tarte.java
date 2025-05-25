@@ -5,14 +5,19 @@ import examples.dependencyInjection.ustensile.MouleATarte;
 
 public abstract class Tarte implements IRecette {
 
-    private PateBrisee pate;
+    private IPate pate;
     private MouleATarte moule;
+
+    protected Tarte(IPate pate) {
+        this.pate = pate;
+    }
 
     // Méthode template
     @Override
     public void preparer() {
         this.prechaufferFour(200);
-        this.preparerPate();
+        // logique de preparation de la pate encapsulée dans IPate
+        this.pate.preparer();
         this.pate.abaisser();
 
         this.preparerMoule();
@@ -32,11 +37,6 @@ public abstract class Tarte implements IRecette {
 
     protected boolean verifierCuisson() {
         return this.pate.estCuite();
-    }
-
-    protected void preparerPate() {
-        String[] ingredients = new String[] {"farine", "beurre", "eau"};
-        this.pate = new PateBrisee(ingredients);
     }
 
     protected void preparerMoule() {

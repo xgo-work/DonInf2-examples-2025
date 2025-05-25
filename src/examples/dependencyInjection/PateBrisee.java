@@ -3,10 +3,15 @@ package examples.dependencyInjection;
 import examples.dependencyInjection.ustensile.Cuisine;
 import examples.dependencyInjection.ustensile.Recipient;
 
-public class PateBrisee {
+public class PateBrisee implements IPate {
 
     boolean ready = false;
     String[] ingredients;
+
+    public PateBrisee(){
+        // appel de l'autre constructeur ()
+        this(new String[]{"beurre", "farine", "eau"});
+    }
 
     public PateBrisee(String[] ingredients){
         this.ingredients = ingredients;
@@ -29,7 +34,7 @@ public class PateBrisee {
         }
     }
 
-    boolean estCuite() {
+    public boolean estCuite() {
         //...
         return true;
     }
