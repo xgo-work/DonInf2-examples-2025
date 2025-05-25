@@ -1,10 +1,10 @@
 package examples.templatePattern.ustensile;
 
-import examples.templatePattern.Pate;
+import examples.templatePattern.PateBrisee;
 
 public class MouleATarte {
 
-    public void setPate(Pate pate) {
+    public void setPate(PateBrisee pate) {
         System.out.println("Pâte à tarte ajoutée au moule");
     }
 

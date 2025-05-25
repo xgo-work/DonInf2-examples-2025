@@ -2,11 +2,10 @@ package examples.templatePattern;
 
 import examples.templatePattern.ustensile.Cuisine;
 import examples.templatePattern.ustensile.MouleATarte;
-import examples.templatePattern.ustensile.Recipient;
 
 public abstract class Tarte implements IRecette {
 
-    private Pate pate;
+    private PateBrisee pate;
     private MouleATarte moule;
 
     // Méthode template
@@ -14,8 +13,9 @@ public abstract class Tarte implements IRecette {
     public void preparer() {
         this.prechaufferFour(200);
         this.preparerPate();
+        this.pate.abaisser();
+
         this.preparerMoule();
-        // Appel des méthodes abstraites
         this.preparerGarniture();
         this.ajouterGarniture();
 
@@ -35,11 +35,8 @@ public abstract class Tarte implements IRecette {
     }
 
     protected void preparerPate() {
-        Recipient recipient = Cuisine.getRecipient();
-        recipient.ajouter("farine");
-        recipient.ajouter("oeuf");
-        recipient.ajouter("beurre");
-        this.pate = new Pate(recipient.getContenu());
+        String[] ingredients = new String[] {"farine", "beurre", "eau"};
+        this.pate = new PateBrisee(ingredients);
     }
 
     protected void preparerMoule() {
